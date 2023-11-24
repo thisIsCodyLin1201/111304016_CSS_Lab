@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="111304016_CSS_Lab.css">
+</head>
+<body>
+	<div class="custom-body">
+    	<h1 class="main-heading">My first style page</h1>
+    	<p class="custom-body">Welcome to my homepage. Explore and enjoy!</p>
+
+    	<ul class="navbar">
+        	<li><b>Home</b></li>
+        	<li><b>About</b></li>
+        	<li class="services-dropdown"><b>
+            	Services
+            	<ul class="dropdown-content">
+                	<li>Web Design</li>
+                	<li>Graphic Design</li>
+                	<li>Digital Marketing</li>
+            	</ul>
+            </b></li>
+        	<li><b>Contact</b></li>
+    	</ul>
+	</div>
+
+    <div class="board">
+    	<p>This is my first homepage. I'm learning CSS to create a visible layout.</p>
+        <p>Feel free to send me a message: cody921201@gmail.com</p>
+    </div>
+
+    <script>
+        // 當點擊 "Services" 時，切換下拉選單的顯示與隱藏
+        const servicesDropdown = document.querySelector('.services-dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+        
+        servicesDropdown.addEventListener('click', function() {
+            dropdownContent.classList.toggle('show');
+        });
+
+        // 如果點擊其他地方，隱藏下拉選單
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.services-dropdown')) {
+                const dropdowns = document.getElementsByClassName('dropdown-content');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
